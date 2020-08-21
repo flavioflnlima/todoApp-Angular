@@ -1,27 +1,37 @@
-# Todo
+<h1 align="center">
+  Todo App
+  <br>
+  <img alt="Todo App" title="Todo" src="src/assets/playlist_add_check-black-18dp.svg" width="220px" />
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+<p align="center">
+  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
+  
+<p align="center">
+<a href="https://www.linkedin.com/in/flavio-fln-lima/">
+   <img alt="Made by Flavio Lima" src="https://img.shields.io/badge/made%20by-Flavio Lima-%2304D361">
+</a>
+ <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=7159c1&labelColor=000000" alt="PRs welcome!" />
+</p>
+
+<br>
+
+<p align="center">
+  <img alt="Ecoleta" src="src/assets/tela.png" width="100%">
+</p>
+
+## 🚀 Tecnologias
+
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+
+## 💻 Projeto
+Este é um projeto que lista suas tarefas diárias é um projeto de estudo inicial com [Angular](https://angular.io/)
+
+## Servidor de desenvolvimento
+Execute `ng serve` para um servidor de desenvolvimento. Navegue para `http://localhost:4200/.` O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
