@@ -1,8 +1,68 @@
-<h1>{{title}}</h1>
-<ul>
-  <li *ngFor="let todo of todos">{{todo.description}} -
-    <button *ngIf="!todo.done">Concluir </button>
-    <button *ngIf="todo.done">Refazer </button>
-    <button>Remover</button>
+<h1 class="title">{{ title }}</h1>
+<ul class="animated flipInX" *ngIf="mode == 'list'">
+  <p *ngIf="todos.length == 0">
+    <small>Você ainda não possui tarefa hoje</small>
+  </p>
+  <li
+    *ngFor="let todo of todos"
+    [style.backgroundColor]="todo.done ? 'rgba(47, 163, 47, 0.74)' : '#fff'"
+    [style.borderRadius]="todo.done ? '10px': '5PX'"
+  >
+    {{ todo.description }}
+    <button *ngIf="!todo.done" (click)="markAsDone(todo)">
+      <i class="fas fa-tasks"></i>
+    </button>
+    <button *ngIf="todo.done" (click)="markAsUnDone(todo)">
+      <i class="fas fa-retweet"></i>
+    </button>
+    <button
+      mat-fab
+      aria-label="Example icon button with a bookmark icon"
+      (click)="remove(todo)"
+    >
+      <i class="fas fa-trash"></i>
+    </button>
   </li>
 </ul>
+
+<div id="modal" *ngIf="mode == 'add'" class="animated flipInX">
+  <h1 class="text-center">Nova Tarefa</h1>
+  <form [formGroup]="form">
+    <input
+      type="text"
+      placeholder="Descrição da Tarefa"
+      maxlength="60"
+      formControlName="description"
+    />
+    <small
+      class="danger"
+      *ngIf="
+        form.controls.description.invalid && !form.controls.description.pristine
+      "
+      >Esta campo deve conter entre 3 e 60 caracteres
+    </small>
+    <p class="text-center">
+      <button class="button" [disabled]="form.invalid" (click)="add()">
+        <i class="fas fa-check"></i>
+        Salvar
+      </button>
+    </p>
+  </form>
+</div>
+
+<button
+  class="add-button button animated fadeInUp"
+  (click)="changeMode('add')"
+  *ngIf="mode == 'list'"
+>
+  <i class="far fa-file-alt"></i>
+  NOVA TAREFA
+</button>
+<button
+  class="add-button button animated fadeInUp"
+  (click)="changeMode('list')"
+  *ngIf="mode == 'add'"
+>
+  <i class="fas fa-times"></i>
+  CANCELAR
+</button>
